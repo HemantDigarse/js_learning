@@ -20,9 +20,37 @@ const user={
 
 console.log(this);
 
-
+/*
 function display(){
     let user="HemantDigarse"
     console.log(this.user); //undefined 
 } // this works only on object variable context
 display()
+
+*/
+
+
+// const display= function (){
+//     let user="hemant";
+//     console.log(this.user);
+// }
+// display()
+
+
+
+const display=()=>{
+    let user="Hemant"
+    console.log(this)  
+
+}
+display()
+
+
+// const addTwo=(num1,num2)=>(num1+num2);  //implicit return
+const addTwo=(num1,num2)=>({user_name:"Hemant"});
+console.log(addTwo(45,45));
+
+
+const arr=[1,2,3,4,5,6,7,8,9,10];
+const findSecondValue=(arr)=>(arr[1])
+console.log(findSecondValue(arr));
