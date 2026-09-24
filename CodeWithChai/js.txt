@@ -1,0 +1,47 @@
+JavaScript Execution Context
+global Execution context refers to this while we will write program
+Functional Execution Context
+Eval Execution Context(one of property of global object)
+
+Phases of Code Execution
+1.Memory creation
+2.Execution phase
+
+
+let value1=10;                                    1.Global Execution (this)
+let value2=20                                     2.Memory Creation Phases
+function addTwoNumber(value1,value2){                 a.value1->undefined
+    let add=value1+value2;                            b.value2->undefined
+    return add                                        c.addTwoNumber->defination of funtction
+                                                      d.res1->undefined
+}                                                     e.res2->undefined
+int res1=addTwoNumber(value1,value2)                     3.Execution Phase
+int res2=addTwoNumber(10,30)                         a.value1->10
+                                                     b.value2->20
+                                                     c.addTwoNumber->Create it owns executional context every time when function is written(new varaible environment+Execution Thread)
+                                                        c.1. Memory Phase
+                                                           value1->undefined
+                                                           value2->undefined
+                                                           total->undefined
+                                                        c.2. Execution Phase
+                                                           value1->10
+                                                           value2->5
+                                                           total->15(return in global executional context)
+                                                    d.res1->15
+                                                    e.res2->addTwoNumber(nve+executional + single Thread)
+                                                      MemoryPhase
+                                                         e.1. value1->undefined
+                                                         e.2. value2->undefined
+                                                      Execution Phases
+                                                      value1->10
+                                                      value2->30
+                                                      res2->40
+
+
+
++++++++++++++CALL STACK+++++++++++++++++++++++++++++
+
+LIFO(Last in First Out) principal Obey
+Function Execution lives in Call Stack
+The call stack is a data structure used by the JavaScript engine to keep track of function calls.
+                                                      
